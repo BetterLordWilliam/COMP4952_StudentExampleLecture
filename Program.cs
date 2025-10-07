@@ -14,7 +14,7 @@ builder.Services
     .ConfigureFunctionsApplicationInsights()
     .AddDbContext<SchoolContext>(options =>
     {
-        var connectionString = Environment.GetEnvironmentVariable("DatabaseConnection");
+        var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
         options.UseSqlServer(connectionString);
     })
     .AddSingleton<HttpClient>();
